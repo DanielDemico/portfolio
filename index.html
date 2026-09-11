@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portifólio em construção</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      background: #000;
+      color: #fff;
+      text-align: center;
+    }
+
+    main {
+      width: min(100%, 34rem);
+    }
+
+    .logo {
+      display: block;
+      width: min(100%, 26rem);
+      height: auto;
+      margin: 0 auto 1.5rem;
+    }
+
+    .dots {
+      min-height: 1.5em;
+      margin: 0 0 1.25rem;
+      color: #fff;
+      font-size: 1.75rem;
+      letter-spacing: 0.15em;
+    }
+
+    p {
+      margin: 0.4rem 0;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      line-height: 1.5;
+    }
+
+    .english {
+      color: #bdbdbd;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="logo" src="D.png" alt="Logo Daniel Cezar">
+    <div class="dots" aria-label="Carregando" aria-live="polite"></div>
+    <p>Portifólio em construção, volte logo</p>
+    <p class="english">Portfolio under construction, come back soon.</p>
+  </main>
+
+  <script>
+    const dotsElement = document.querySelector('.dots');
+    let dotCount = 0;
+
+    function animateDots() {
+      dotsElement.textContent = '.'.repeat(dotCount);
+      dotCount = (dotCount + 1) % 4;
+    }
+
+    animateDots();
+    setInterval(animateDots, 500);
+  </script>
+</body>
+</html>
